@@ -22,7 +22,7 @@ const people = [
 
 // FOR EACH - проходит по всем элемнтам массива, не возвращает значения
 
-//es5
+// ES5
 // people.forEach(function(person, index, peopleArray) {
 //     console.log(person)
 //     console.log(index)
@@ -33,19 +33,20 @@ const people = [
 //     console.log(person)
 // })
 
+// ES6
+// people.forEach(person => console.log(person))
 
-//es6
-//people.forEach(person => console.log(person))
 
+// MAP - возвращает новый массив. Перебираем исходный массив, чтобы сделать преобразования
 
-// MAP - возвращает массив. Перебираем исходный массив, чтобы сделать преобразования
-
-// const newPeople = people.map(person => {
-//     //return person     
-//     //return person.name
-//     //return `${person.name} (${person.age})`
-//     return person.age * 3
-// })
+const newPeople = people.map(person => {    
+    //return person     
+    //return 'Hello'
+    //return person.name
+    //return `${person.name} (${person.age})`
+    return person.age * 3
+})
+// const newPeople = people.map(person => person.age * 3)
 // console.log(newPeople)
 
 
@@ -64,11 +65,11 @@ const people = [
 // })
 // console.log(adults);
 
-// const adults = people.filter(person => person.age >= 18)
+const adults = people.filter(person => person.age >= 18)
 // console.log(adults);
 
 
-// REDUCE
+// REDUCE - возвращает значение, измененяет значения переменной total на каждой итерации
 
 // let amount = 0;
 // for (let  i= 0; i < people.length; i++) {
@@ -76,10 +77,10 @@ const people = [
 // }
 // console.log(amount)
 
-// const amount = people.reduce((total, person) => {
-//     return total + person.budget
-// }, 0)
-// console.log(amount)
+const amount = people.reduce((total, person) => {
+    return total + person.budget
+}, 0)
+console.log(amount)
 
 // const amount = people.reduce((total, person) => total + person.budget, 0) 
 // console.log(amount)
